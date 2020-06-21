@@ -3,6 +3,7 @@ package com.konstantinkochetov.beer.order.service.web.mappers;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrder;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrder.BeerOrderBuilder;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderLine;
+import com.konstantinkochetov.beer.order.service.domain.Customer;
 import com.konstantinkochetov.beer.order.service.domain.OrderStatusEnum;
 import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto;
 import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto.BeerOrderDtoBuilder;
@@ -11,13 +12,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import javax.annotation.processing.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-06-20T09:19:27+0200",
+    date = "2020-06-21T07:53:52+0200",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.5 (AdoptOpenJDK)"
 )
 @Component
@@ -36,6 +38,7 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
 
         BeerOrderDtoBuilder beerOrderDto = BeerOrderDto.builder();
 
+        beerOrderDto.customerId( beerOrderCustomerId( beerOrder ) );
         beerOrderDto.id( beerOrder.getId() );
         if ( beerOrder.getVersion() != null ) {
             beerOrderDto.version( beerOrder.getVersion().intValue() );
@@ -70,6 +73,21 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         beerOrder.orderStatusCallbackUrl( dto.getOrderStatusCallbackUrl() );
 
         return beerOrder.build();
+    }
+
+    private UUID beerOrderCustomerId(BeerOrder beerOrder) {
+        if ( beerOrder == null ) {
+            return null;
+        }
+        Customer customer = beerOrder.getCustomer();
+        if ( customer == null ) {
+            return null;
+        }
+        UUID id = customer.getId();
+        if ( id == null ) {
+            return null;
+        }
+        return id;
     }
 
     protected List<BeerOrderLineDto> beerOrderLineSetToBeerOrderLineDtoList(Set<BeerOrderLine> set) {

@@ -67,7 +67,6 @@ public class TastingRoomService {
                 .build();
 
         BeerOrderDto savedOrder = beerOrderService.placeOrder(customer.getId(), beerOrder);
-
     }
 
     private String getRandomBeerUpc() {
