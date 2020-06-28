@@ -1,6 +1,6 @@
 package com.konstantinkochetov.beer.order.service.services.beer;
 
-import com.konstantinkochetov.beer.order.service.web.model.BeerDto;
+import com.konstantinkochetov.brewery.model.BeerDto;
 
 import java.util.Optional;
 import java.util.UUID;

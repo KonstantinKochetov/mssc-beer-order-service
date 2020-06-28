@@ -1,8 +1,8 @@
 package com.konstantinkochetov.beer.order.service.services;
 
 import com.konstantinkochetov.beer.order.service.repositories.BeerOrderRepository;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderLineDto;
+import com.konstantinkochetov.brewery.model.BeerOrderDto;
+import com.konstantinkochetov.brewery.model.BeerOrderLineDto;
 import com.konstantinkochetov.beer.order.service.bootstrap.BeerOrderBootStrap;
 import com.konstantinkochetov.beer.order.service.domain.Customer;
 import com.konstantinkochetov.beer.order.service.repositories.CustomerRepository;

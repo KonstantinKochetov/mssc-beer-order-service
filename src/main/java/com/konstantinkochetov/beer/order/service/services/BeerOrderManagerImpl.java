@@ -1,10 +1,5 @@
 package com.konstantinkochetov.beer.order.service.services;
 
-import com.konstantinkochetov.beer.order.service.domain.BeerOrder;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto;
-
-import java.util.UUID;
-
 //public class BeerOrderManagerImpl implements BeerOrderManager {
 //    @Override
 //    public BeerOrder newBeerOrder(BeerOrder beerOrder) {

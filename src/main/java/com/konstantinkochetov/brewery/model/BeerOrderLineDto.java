@@ -1,30 +1,18 @@
-package com.konstantinkochetov.beer.order.service.web.model;
-
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
-import java.time.OffsetDateTime;
-import java.util.List;
-import java.util.UUID;
+package com.konstantinkochetov.brewery.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerOrderDto {
+public class BeerOrderLineDto {
 
     @JsonProperty("id")
     private UUID id = null;
@@ -40,9 +28,12 @@ public class BeerOrderDto {
     @JsonProperty("lastModifiedDate")
     private OffsetDateTime lastModifiedDate = null;
 
-    private UUID customerId;
-    private String customerRef;
-    private List<BeerOrderLineDto> beerOrderLines;
-    private String orderStatus;
-    private String orderStatusCallbackUrl;
+    private String upc;
+    private String beerName;
+    private String beerStyle;
+    private UUID beerId;
+    private Integer orderQuantity = 0;
+    private BigDecimal price;
+
+    private Integer quantityAllocated;
 }

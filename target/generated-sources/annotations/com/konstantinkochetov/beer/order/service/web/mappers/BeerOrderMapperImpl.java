@@ -5,9 +5,9 @@ import com.konstantinkochetov.beer.order.service.domain.BeerOrder.BeerOrderBuild
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderLine;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderStatusEnum;
 import com.konstantinkochetov.beer.order.service.domain.Customer;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto.BeerOrderDtoBuilder;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderLineDto;
+import com.konstantinkochetov.brewery.model.BeerOrderDto;
+import com.konstantinkochetov.brewery.model.BeerOrderDto.BeerOrderDtoBuilder;
+import com.konstantinkochetov.brewery.model.BeerOrderLineDto;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-06-28T13:30:16+0200",
+    date = "2020-06-28T14:07:41+0200",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.5 (AdoptOpenJDK)"
 )
 @Component

@@ -1,7 +1,7 @@
 package com.konstantinkochetov.beer.order.service.web.mappers;
 
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderLine;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderLineDto;
+import com.konstantinkochetov.brewery.model.BeerOrderLineDto;
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 

@@ -18,8 +18,8 @@
 package com.konstantinkochetov.beer.order.service.services;
 
 
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderPagedList;
+import com.konstantinkochetov.brewery.model.BeerOrderDto;
+import com.konstantinkochetov.brewery.model.BeerOrderPagedList;
 import org.springframework.data.domain.Pageable;
 
 import java.util.UUID;

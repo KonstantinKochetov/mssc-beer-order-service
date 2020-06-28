@@ -2,8 +2,8 @@ package com.konstantinkochetov.beer.order.service.web.mappers;
 
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderLine;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderLine.BeerOrderLineBuilder;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderLineDto;
-import com.konstantinkochetov.beer.order.service.web.model.BeerOrderLineDto.BeerOrderLineDtoBuilder;
+import com.konstantinkochetov.brewery.model.BeerOrderLineDto;
+import com.konstantinkochetov.brewery.model.BeerOrderLineDto.BeerOrderLineDtoBuilder;
 import javax.annotation.processing.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-06-28T13:30:16+0200",
+    date = "2020-06-28T14:07:41+0200",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.5 (AdoptOpenJDK)"
 )
 @Component
