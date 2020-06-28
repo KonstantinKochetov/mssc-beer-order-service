@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.konstantinkochetov.beer.order.service.BeerOrderServiceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.657 s <<< FAILURE! - in com.konstantinkochetov.beer.order.service.BeerOrderServiceApplicationTests
-contextLoads  Time elapsed: 0.002 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'beerOrderServiceImpl' defined in file [/Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/target/classes/com/konstantinkochetov/beer/order/service/services/BeerOrderServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 3; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.konstantinkochetov.beer.order.service.services.BeerOrderManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.konstantinkochetov.beer.order.service.services.BeerOrderManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.266 s - in com.konstantinkochetov.beer.order.service.BeerOrderServiceApplicationTests

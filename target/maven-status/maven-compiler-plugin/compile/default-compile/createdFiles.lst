@@ -6,7 +6,6 @@ com/konstantinkochetov/beer/order/service/services/TastingRoomService.class
 com/konstantinkochetov/brewery/model/BeerOrderDto.class
 com/konstantinkochetov/brewery/model/BeerDto$BeerDtoBuilder.class
 com/konstantinkochetov/beer/order/service/domain/BeerOrderLine$BeerOrderLineBuilder.class
-com/konstantinkochetov/beer/order/service/services/BeerOrderManager.class
 com/konstantinkochetov/brewery/model/BeerOrderLineDto.class
 com/konstantinkochetov/beer/order/service/config/JmsConfig.class
 com/konstantinkochetov/beer/order/service/domain/BeerOrderStatusEnum.class
