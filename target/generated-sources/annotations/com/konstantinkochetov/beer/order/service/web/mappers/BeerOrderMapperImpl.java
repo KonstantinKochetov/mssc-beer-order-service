@@ -3,8 +3,8 @@ package com.konstantinkochetov.beer.order.service.web.mappers;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrder;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrder.BeerOrderBuilder;
 import com.konstantinkochetov.beer.order.service.domain.BeerOrderLine;
+import com.konstantinkochetov.beer.order.service.domain.BeerOrderStatusEnum;
 import com.konstantinkochetov.beer.order.service.domain.Customer;
-import com.konstantinkochetov.beer.order.service.domain.OrderStatusEnum;
 import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto;
 import com.konstantinkochetov.beer.order.service.web.model.BeerOrderDto.BeerOrderDtoBuilder;
 import com.konstantinkochetov.beer.order.service.web.model.BeerOrderLineDto;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-06-25T12:20:17+0200",
+    date = "2020-06-28T13:30:16+0200",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.5 (AdoptOpenJDK)"
 )
 @Component
@@ -45,10 +45,12 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         }
         beerOrderDto.createdDate( dateMapper.asOffsetDateTime( beerOrder.getCreatedDate() ) );
         beerOrderDto.lastModifiedDate( dateMapper.asOffsetDateTime( beerOrder.getLastModifiedDate() ) );
-        beerOrderDto.beerOrderLines( beerOrderLineSetToBeerOrderLineDtoList( beerOrder.getBeerOrderLines() ) );
-        beerOrderDto.orderStatus( orderStatusEnumToOrderStatusEnum( beerOrder.getOrderStatus() ) );
-        beerOrderDto.orderStatusCallbackUrl( beerOrder.getOrderStatusCallbackUrl() );
         beerOrderDto.customerRef( beerOrder.getCustomerRef() );
+        beerOrderDto.beerOrderLines( beerOrderLineSetToBeerOrderLineDtoList( beerOrder.getBeerOrderLines() ) );
+        if ( beerOrder.getOrderStatus() != null ) {
+            beerOrderDto.orderStatus( beerOrder.getOrderStatus().name() );
+        }
+        beerOrderDto.orderStatusCallbackUrl( beerOrder.getOrderStatusCallbackUrl() );
 
         return beerOrderDto.build();
     }
@@ -69,7 +71,9 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         beerOrder.lastModifiedDate( dateMapper.asTimestamp( dto.getLastModifiedDate() ) );
         beerOrder.customerRef( dto.getCustomerRef() );
         beerOrder.beerOrderLines( beerOrderLineDtoListToBeerOrderLineSet( dto.getBeerOrderLines() ) );
-        beerOrder.orderStatus( orderStatusEnumToOrderStatusEnum1( dto.getOrderStatus() ) );
+        if ( dto.getOrderStatus() != null ) {
+            beerOrder.orderStatus( Enum.valueOf( BeerOrderStatusEnum.class, dto.getOrderStatus() ) );
+        }
         beerOrder.orderStatusCallbackUrl( dto.getOrderStatusCallbackUrl() );
 
         return beerOrder.build();
@@ -103,26 +107,6 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         return list;
     }
 
-    protected com.konstantinkochetov.beer.order.service.web.model.OrderStatusEnum orderStatusEnumToOrderStatusEnum(OrderStatusEnum orderStatusEnum) {
-        if ( orderStatusEnum == null ) {
-            return null;
-        }
-
-        com.konstantinkochetov.beer.order.service.web.model.OrderStatusEnum orderStatusEnum1;
-
-        switch ( orderStatusEnum ) {
-            case NEW: orderStatusEnum1 = com.konstantinkochetov.beer.order.service.web.model.OrderStatusEnum.NEW;
-            break;
-            case READY: orderStatusEnum1 = com.konstantinkochetov.beer.order.service.web.model.OrderStatusEnum.READY;
-            break;
-            case PICKED_UP: orderStatusEnum1 = com.konstantinkochetov.beer.order.service.web.model.OrderStatusEnum.PICKED_UP;
-            break;
-            default: throw new IllegalArgumentException( "Unexpected enum constant: " + orderStatusEnum );
-        }
-
-        return orderStatusEnum1;
-    }
-
     protected Set<BeerOrderLine> beerOrderLineDtoListToBeerOrderLineSet(List<BeerOrderLineDto> list) {
         if ( list == null ) {
             return null;
@@ -134,25 +118,5 @@ public class BeerOrderMapperImpl implements BeerOrderMapper {
         }
 
         return set;
-    }
-
-    protected OrderStatusEnum orderStatusEnumToOrderStatusEnum1(com.konstantinkochetov.beer.order.service.web.model.OrderStatusEnum orderStatusEnum) {
-        if ( orderStatusEnum == null ) {
-            return null;
-        }
-
-        OrderStatusEnum orderStatusEnum1;
-
-        switch ( orderStatusEnum ) {
-            case NEW: orderStatusEnum1 = OrderStatusEnum.NEW;
-            break;
-            case READY: orderStatusEnum1 = OrderStatusEnum.READY;
-            break;
-            case PICKED_UP: orderStatusEnum1 = OrderStatusEnum.PICKED_UP;
-            break;
-            default: throw new IllegalArgumentException( "Unexpected enum constant: " + orderStatusEnum );
-        }
-
-        return orderStatusEnum1;
     }
 }
