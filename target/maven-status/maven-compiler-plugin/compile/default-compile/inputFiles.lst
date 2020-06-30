@@ -12,6 +12,7 @@
 /Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/beer/order/service/bootstrap/BeerOrderBootStrap.java
 /Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/beer/order/service/services/BeerOrderServiceImpl.java
 /Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/beer/order/service/services/beer/BeerServiceImpl.java
+/Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/beer/order/service/sm/actions/ValidateOrderAction.java
 /Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/brewery/model/BeerOrderPagedList.java
 /Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/beer/order/service/sm/BeerOrderStateChangeInterceptor.java
 /Users/konstantin/Other/UdemyCoursera/MicroservicesJavaSpringGuru/mssc-brewery-workspace/mssc-beer-order-service/src/main/java/com/konstantinkochetov/beer/order/service/BeerOrderServiceApplication.java
