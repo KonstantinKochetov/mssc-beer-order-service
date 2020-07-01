@@ -53,12 +53,12 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
 
         beerOrderOptional.ifPresentOrElse(beerOrder -> {
             if(isValid){
-                sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_PASSED);
+                sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_PASSED); // persist to the db
 
                 //wait for status change
                 awaitForStatus(beerOrderId, BeerOrderStatusEnum.VALIDATED);
 
-                BeerOrder validatedOrder = beerOrderRepository.findById(beerOrderId).get();
+                BeerOrder validatedOrder = beerOrderRepository.findById(beerOrderId).get(); // important, because previous becomes stale (look above)
 
                 sendBeerOrderEvent(validatedOrder, BeerOrderEventEnum.ALLOCATE_ORDER);
 
