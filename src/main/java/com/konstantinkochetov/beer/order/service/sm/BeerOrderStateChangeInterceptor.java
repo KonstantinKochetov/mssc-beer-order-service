@@ -37,7 +37,7 @@ public class BeerOrderStateChangeInterceptor extends StateMachineInterceptorAdap
 
                     BeerOrder beerOrder = beerOrderRepository.getOne(UUID.fromString(orderId));
                     beerOrder.setOrderStatus(state.getId());
-                    beerOrderRepository.saveAndFlush(beerOrder);
+                    beerOrderRepository.saveAndFlush(beerOrder); // hibernate does lazy writes so here we do it eagerly (immediately)
                 });
     }
 }
