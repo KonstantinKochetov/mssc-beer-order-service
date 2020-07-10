@@ -18,6 +18,10 @@
 
     <description>MSSC Beer Order Service</description>
 
+    <properties>
+        <docker.image.prefix>kotor</docker.image.prefix>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.activemq</groupId>
