@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "fd6aa891-cf71-42bd-bd99-293ab91c559d",
+		"name": "microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mssc-beer-service",
+			"item": [
+				{
+					"name": "getBeerByUUID simple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/beer/5981ad89-98c0-4aa1-88c7-105ad1278a68",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"beer",
+								"5981ad89-98c0-4aa1-88c7-105ad1278a68"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBeerByUUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/beer/5981ad89-98c0-4aa1-88c7-105ad1278a68?showInventoryOnHand=true",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"beer",
+								"5981ad89-98c0-4aa1-88c7-105ad1278a68"
+							],
+							"query": [
+								{
+									"key": "showInventoryOnHand",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBeerByUpc simple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/beerUpc/0631234300019",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"beerUpc",
+								"0631234300019"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBeerByUpc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/beerUpc/0631234200036?showInventoryOnHand=false",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"beerUpc",
+								"0631234200036"
+							],
+							"query": [
+								{
+									"key": "showInventoryOnHand",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listBeers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/v1/beer?showInventoryOnHand=false",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"beer"
+							],
+							"query": [
+								{
+									"key": "showInventoryOnHand",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/customer/c5bc21fd-71bb-4ee9-960f-2657627bf82c",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"c5bc21fd-71bb-4ee9-960f-2657627bf82c"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mssc-beer-order-service",
+			"item": [
+				{
+					"name": "listOrdersWithCallToBeerService",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/customers/a8607fde-bbd2-4350-8634-b66f7c93b608/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"a8607fde-bbd2-4350-8634-b66f7c93b608",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listOrdersWithCallToBeerService One order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/customers/a8607fde-bbd2-4350-8634-b66f7c93b608/orders/0050d582-5347-4478-9d34-06a25beb4273",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"a8607fde-bbd2-4350-8634-b66f7c93b608",
+								"orders",
+								"0050d582-5347-4478-9d34-06a25beb4273"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/customers/",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mssc-beer-inventory-service",
+			"item": [
+				{
+					"name": "inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/api/v1/beer/8574fb30-cc96-43bd-91da-987f3a9849d6/inventory",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"beer",
+								"8574fb30-cc96-43bd-91da-987f3a9849d6",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mssc-inventory-failover-service",
+			"item": [
+				{
+					"name": "inventory-failover",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/inventory-failover/",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"inventory-failover",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mssc-config-server",
+			"item": [
+				{
+					"name": "getConfig default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/beer-service/default",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"beer-service",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConfig beer-service local profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/beer-service/local",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"beer-service",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConfig order-service local profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/order-service/local",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"order-service",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getConfig inventory-service local profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/inventory-service/local",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"inventory-service",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSecureConfig beer-service local-secure (dont forget https for prod env))",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/beer-service/local-secure",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"beer-service",
+								"local-secure"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "encryption",
+			"item": [
+				{
+					"name": "encrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "password"
+						},
+						"url": {
+							"raw": "localhost:8888/encrypt",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "5a1915d07fcdca3105649e8f99cdf0c04328255cf83cc0698f03f8a9b647f5f4"
+						},
+						"url": {
+							"raw": "localhost:8888/decrypt",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"decrypt"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

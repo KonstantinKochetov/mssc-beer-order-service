@@ -20,7 +20,7 @@ docker run -d -p 9411:9411 openzipkin/zipkin
 - Inventory service: https://github.com/KonstantinKochetov/mssc-beer-inventory-service
 - Inventory failover service: https://github.com/KonstantinKochetov/mssc-inventory-failover 
 
-4. Make some requests from a client (like Postman) 
+4. Make some requests from a client (like Postman). All postman calls are available in every repo (file: microservices.postman_collection.json). 
 
 5. Visualize it: http://localhost:9411/, go to dependencies page, choose a date and search <br>
 ![Alt Text](zipkin.gif)
