@@ -1,4 +1,4 @@
-# Spring Boot Microservice
+# Spring Boot Microservices
 
 To run locally: <br>
 
@@ -11,7 +11,14 @@ docker run -it --rm \
 2. Run zipkin docker: <br>
 docker run -d -p 9411:9411 openzipkin/zipkin
 
-3. Run all services (start with eureka, config, gateway, and then the rest)
+3. Run all services <br>
+- Eureka: https://github.com/KonstantinKochetov/mssc-brewery-eureka
+- Config: https://github.com/KonstantinKochetov/mssc-config-server
+- Gateway: https://github.com/KonstantinKochetov/mssc-brewery-gateway
+- Beer service: https://github.com/KonstantinKochetov/mssc-beer-service
+- Order service: https://github.com/KonstantinKochetov/mssc-beer-order-service
+- Inventory service: https://github.com/KonstantinKochetov/mssc-beer-inventory-service
+- Inventory failover service: https://github.com/KonstantinKochetov/mssc-inventory-failover 
 
 4. Make some requests from a client (like Postman) 
 
